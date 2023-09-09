@@ -6,7 +6,7 @@ const Checkbox = ({ checked, onCheckbox }) => (
       type="checkbox"
       className={styles.input}
       checked={checked}
-      onClick={onCheckbox}
+      onChange={onCheckbox}
     />
     <span className={styles.checkboxVisible}></span>
   </label>

@@ -3,3 +3,20 @@
   background-color: var(--background-smoky-color);
   border-radius: 24px;
 }
+
+.container {
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 22px 24px 50px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 767.98px) {
+  .container {
+    padding: 15px 0 0;
+    flex-direction: column;
+  }
+}

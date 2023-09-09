@@ -1,0 +1,64 @@
+.Task {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background-color: var(--background-white-color);
+  box-shadow: var(--common-element-shadow);
+}
+
+.Task:last-of-type {
+  margin-bottom: 0;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.24px;
+  margin-bottom: 15px;
+}
+
+.description {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 15px;
+  max-width: 700px;
+}
+
+.deadline {
+  position: relative;
+  max-width: 70px;
+  margin: 0;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.deadline:hover {
+  background-color: var(--system-smoky-dark-color);
+}
+
+.deadline:hover::after {
+  position: absolute;
+  content: "Дедлайн!!!";
+  display: block;
+  background-color: var(--system-magenta-color);
+  padding: 5px;
+  border-radius: 5px;
+  left: 120%;
+  top: 0;
+}
