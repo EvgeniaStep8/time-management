@@ -1,6 +1,6 @@
 import styles from "./TasksHeader.module.css";
 
-const TasksHeader = ({ count, countDone }) => {
+const TasksHeader = ({ count, countDone, openPopup }) => {
   return (
     <div className={styles.TasksHeader}>
       <h1 className={styles.title}>Список задач</h1>
@@ -10,7 +10,7 @@ const TasksHeader = ({ count, countDone }) => {
           <button type="button" className={styles.sort}>
             Сортировать
           </button>
-          <button className={styles.add} type="button">
+          <button className={styles.add} type="button" onClick={openPopup}>
             + Новая задача
           </button>
         </div>
