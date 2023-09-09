@@ -3,10 +3,5 @@
 @import url("./fonts.css");
 
 body {
-  min-height: 100vh;
   font-family: "SegoeUI", Arial, sans-serif;
-  background-color: var(--system-violet-color);
-  color: var(--text-black-color);
-  display: flex;
-  flex-direction: column;
 }

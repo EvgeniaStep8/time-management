@@ -1,8 +1,8 @@
 import styles from "./Header.module.css";
 
 const Header = () => (
-  <header class={styles.Header}>
-    <p class={styles.logo}>Дела и точка</p>
+  <header className={styles.Header}>
+    <p className={styles.logo}>Дела и точка</p>
   </header>
 );
 
