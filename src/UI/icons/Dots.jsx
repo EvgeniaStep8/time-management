@@ -23,8 +23,8 @@ const Dots = ({ onClick }) => (
         r="1"
         transform="translate(5 11)"
         stroke="#000000"
-        stroke-miterlimit="10"
-        stroke-width="0.5"
+        strokeMiterlimit="10"
+        strokeWidth="0.5"
       />
       <circle
         id="Oval-2"
@@ -34,8 +34,8 @@ const Dots = ({ onClick }) => (
         r="1"
         transform="translate(11 11)"
         stroke="#000000"
-        stroke-miterlimit="10"
-        stroke-width="0.5"
+        strokeMiterlimit="10"
+        strokeWidth="0.5"
       />
       <circle
         id="Oval-3"
@@ -45,8 +45,8 @@ const Dots = ({ onClick }) => (
         r="1"
         transform="translate(17 11)"
         stroke="#000000"
-        stroke-miterlimit="10"
-        stroke-width="0.5"
+        strokeMiterlimit="10"
+        strokeWidth="0.5"
       />
     </g>
   </svg>
