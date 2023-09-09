@@ -1,7 +1,7 @@
 .App {
   min-height: 100vh;
   font-family: "SegoeUI", Arial, sans-serif;
-  background-color: var(--system-violet-color);
+  background-color: var(--system-magenta-color);
   color: var(--text-black-color);
   display: flex;
   flex-direction: column;
