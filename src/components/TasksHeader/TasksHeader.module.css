@@ -1,0 +1,72 @@
+.TasksHeader {
+  width: 100%;
+  padding: 20px 16px 10px;
+  box-sizing: border-box;
+  border-bottom: 2px solid var(--rulers-rulers-colors);
+  margin-bottom: 20px;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.progress::before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: url("../../images/done.svg") center no-repeat;
+  margin-right: 5px;
+}
+
+.sort {
+  background: inherit;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  color: rgb(67, 65, 65);
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.sort:hover {
+  color: var(--dark-system-coral-color);
+}
+
+.add {
+  border: none;
+  background-color: rgb(0, 106, 255);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  color: var(--system-white-color);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add:hover {
+  opacity: 0.7;
+}

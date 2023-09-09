@@ -4,7 +4,7 @@ let tasks = [
     description: "Купить молоко, яйца и хлеб",
     date: "2022-01-15",
     deadline: "2022-01-16",
-    done: false,
+    done: true,
     id: 1,
   },
   {
@@ -20,7 +20,7 @@ let tasks = [
     description: "Почистить кухню, ванную и спальню",
     date: "2022-01-20",
     deadline: "2022-01-21",
-    done: false,
+    done: true,
     id: 3,
   },
   {

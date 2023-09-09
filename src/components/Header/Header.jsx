@@ -2,7 +2,7 @@ import styles from "./Header.module.css";
 
 const Header = () => (
   <header className={styles.Header}>
-    <p className={styles.logo}>Дела и точка</p>
+    <p className={styles.logo}>Делай и точка</p>
   </header>
 );
 
