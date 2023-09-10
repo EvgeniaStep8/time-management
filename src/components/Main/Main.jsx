@@ -8,6 +8,7 @@ const Main = ({
   handleCheckTask,
   handleDeliteTask,
   handleSortClick,
+  handleTaskEdit,
 }) => {
   return (
     <main className={styles.Main}>
@@ -22,6 +23,7 @@ const Main = ({
           tasks={tasks}
           handleCheckTask={handleCheckTask}
           handleDeliteTask={handleDeliteTask}
+          handleTaskEdit={handleTaskEdit}
         />
       </div>
     </main>

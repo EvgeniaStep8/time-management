@@ -55,6 +55,26 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
 
+  const handleTaskEdit = (
+    id,
+    { title, description, dateDeadline, timeDeadline }
+  ) => {
+    const date = +new Date(`${dateDeadline} ${timeDeadline}`);
+
+    const updatedTasks = tasks.map((task) =>
+      task.id === id
+        ? {
+            ...task,
+            title: title,
+            description: description,
+            deadline: date,
+          }
+        : task
+    );
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+  };
+
   const handleSortClick = (field) => {
     const sortedTask = tasks
       .slice()
@@ -72,6 +92,7 @@ function App() {
         handleCheckTask={handleCheckTask}
         handleDeliteTask={handleDeliteTask}
         handleSortClick={handleSortClick}
+        handleTaskEdit={handleTaskEdit}
       />
       <Footer />
       <Popup
