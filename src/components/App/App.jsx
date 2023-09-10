@@ -21,10 +21,21 @@ function App() {
     setPopupOpen(false);
   };
 
-  const handleAddTask = (task) => {
-    task.date = Date.now();
-    task.done = false;
-    task.id = tasks.length + 1;
+  const handleAddTask = ({
+    title,
+    description,
+    dateDeadline,
+    timeDeadline,
+  }) => {
+    const date = +new Date(`${dateDeadline} ${timeDeadline}`);
+    const task = {
+      title: title,
+      description: description,
+      date: Date.now(),
+      deadline: date,
+      done: false,
+      id: tasks.length,
+    };
     setTasks([task, ...tasks]);
     localStorage.setItem("tasks", JSON.stringify([task, ...tasks]));
   };
@@ -37,6 +48,12 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(newTasks));
   };
 
+  const handleDeliteTask = (id) => {
+    const updatedTasks = tasks.filter((task) => task.id !== id);
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+  };
+
   return (
     <div className="App">
       <Header />
@@ -44,6 +61,7 @@ function App() {
         openPopup={openPopup}
         tasks={tasks}
         handleCheckTask={handleCheckTask}
+        handleDeliteTask={handleDeliteTask}
       />
       <Footer />
       <Popup

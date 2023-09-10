@@ -6,29 +6,30 @@ const Popup = ({ isOpen, onClose, onSubmit }) => {
     ? `${styles.Popup} ${styles.openPopup}`
     : styles.Popup;
 
-  const { values, setValues, handleChange } = useInputsChange({
+  const initialValues = {
     title: "",
     description: "",
     dateDeadline: "",
     timeDeadline: "",
-  });
+  };
+
+  const { values, setValues, handleChange } = useInputsChange(initialValues);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     onSubmit(values);
+    close();
+  };
+
+  const close = () => {
     onClose();
-    setValues({
-      title: "",
-      description: "",
-      dateDeadline: "",
-      timeDeadline: "",
-    });
+    setValues(initialValues);
   };
 
   return (
     <div className={className}>
       <div className={styles.container}>
-        <button className={styles.close} type="button" onClick={onClose} />
+        <button className={styles.close} type="button" onClick={close} />
         <h2 className={styles.title}>Задача</h2>
         <form className={styles.form} name="popupForm" onSubmit={handleSubmit}>
           <input
