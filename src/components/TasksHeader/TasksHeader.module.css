@@ -40,19 +40,9 @@
   margin-right: 5px;
 }
 
-.sort {
-  background: inherit;
-  border: none;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 18px;
-  color: rgb(67, 65, 65);
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.sort:hover {
-  color: var(--dark-system-coral-color);
+.buttons {
+  display: flex;
+  align-items: center;
 }
 
 .add {

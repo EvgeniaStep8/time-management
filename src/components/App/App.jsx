@@ -28,6 +28,7 @@ function App() {
     timeDeadline,
   }) => {
     const date = +new Date(`${dateDeadline} ${timeDeadline}`);
+
     const task = {
       title: title,
       description: description,
@@ -54,6 +55,14 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
 
+  const handleSortClick = (field) => {
+    const sortedTask = tasks
+      .slice()
+      .sort((task1, task2) => +task1[field] - +task2[field]);
+    setTasks(sortedTask);
+    localStorage.setItem("tasks", JSON.stringify(sortedTask));
+  };
+
   return (
     <div className="App">
       <Header />
@@ -62,6 +71,7 @@ function App() {
         tasks={tasks}
         handleCheckTask={handleCheckTask}
         handleDeliteTask={handleDeliteTask}
+        handleSortClick={handleSortClick}
       />
       <Footer />
       <Popup
