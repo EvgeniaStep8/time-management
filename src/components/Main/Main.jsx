@@ -1,9 +1,8 @@
 import styles from "./Main.module.css";
-import { tasks } from "../../utils/tasks";
 import Tasks from "../Tasks/Tasks";
 import TasksHeader from "../TasksHeader/TasksHeader";
 
-const Main = ({ openPopup }) => {
+const Main = ({ openPopup, tasks, handleCheckTask }) => {
   return (
     <main className={styles.Main}>
       <div className={styles.container}>
@@ -12,7 +11,7 @@ const Main = ({ openPopup }) => {
           countDone={tasks.filter((task) => task.done).length}
           openPopup={openPopup}
         />
-        <Tasks tasks={tasks} />
+        <Tasks tasks={tasks} handleCheckTask={handleCheckTask} />
       </div>
     </main>
   );

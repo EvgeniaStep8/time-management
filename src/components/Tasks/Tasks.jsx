@@ -1,18 +1,12 @@
 import styles from "./Tasks.module.css";
 import Task from "../Task/Task";
 
-const Tasks = ({ tasks }) => {
+const Tasks = ({ tasks, handleCheckTask }) => {
   return (
     <>
       {tasks.length > 0 ? (
         tasks.map((task) => (
-          <Task
-            title={task.title}
-            description={task.description}
-            deadline={task.deadline}
-            done={task.done}
-            key={task.id}
-          />
+          <Task task={task} key={task.id} handleCheckTask={handleCheckTask} />
         ))
       ) : (
         <div className={styles.bubble}>

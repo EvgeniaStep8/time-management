@@ -74,3 +74,9 @@
   left: 120%;
   top: 0;
 }
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
