@@ -5,6 +5,7 @@ import DeleteIcon from "../../UI/icons/DeleteIcon";
 import EditIcon from "../../UI/icons/EditIcon";
 import Checkbox from "../../UI/Checkbox/Checkbox";
 import CloseIcon from "../../UI/icons/CloseIcon";
+import SubmitButton from "../../UI/SubmitButton/SubmitButton";
 
 const Task = ({ task, handleCheckTask, handleDeliteTask, handleTaskEdit }) => {
   const [isChecked, setChecked] = useState(task.done);
@@ -17,7 +18,7 @@ const Task = ({ task, handleCheckTask, handleDeliteTask, handleTaskEdit }) => {
     timeDeadline: new Date(task.deadline).toISOString().slice(11, 19),
   };
 
-  const { values, setValues, handleChange } = useInputsChange(initialValues);
+  const { values, resetForm, handleChange } = useInputsChange(initialValues);
 
   const titleClassName = isEdit
     ? `${styles.title} ${styles.titleInput}`
@@ -50,7 +51,7 @@ const Task = ({ task, handleCheckTask, handleDeliteTask, handleTaskEdit }) => {
 
   const onClose = () => {
     setEdit(false);
-    setValues(initialValues);
+    resetForm();
   };
 
   const onSubmit = (evt) => {
@@ -98,7 +99,8 @@ const Task = ({ task, handleCheckTask, handleDeliteTask, handleTaskEdit }) => {
             )
           )}
           {isEdit ? (
-            <>
+            <div className={styles.footer}>
+              <div>
               <input
                 type="date"
                 name="dateDeadline"
@@ -115,8 +117,9 @@ const Task = ({ task, handleCheckTask, handleDeliteTask, handleTaskEdit }) => {
                 value={values.timeDeadline}
                 onChange={handleChange}
               />
-              <button type="submit">Сохранить</button>
-            </>
+              </div>
+              <SubmitButton text="Сохранить" short />
+            </div>
           ) : (
             <p className={styles.deadline}>{`${time}, ${date}`}</p>
           )}

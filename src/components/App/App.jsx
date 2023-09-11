@@ -37,7 +37,7 @@ function App() {
       done: false,
       id: tasks.length,
     };
-    setTasks([task, ...tasks]);
+    setTasks([...tasks, task]);
     localStorage.setItem("tasks", JSON.stringify([task, ...tasks]));
   };
 

@@ -1,14 +1,18 @@
 import { useState } from "react";
 
-const useInputsChange = (inputsValues) => {
-  const [values, setValues] = useState(inputsValues);
+const useInputsChange = (initialValues) => {
+  const [values, setValues] = useState(initialValues);
 
   const handleChange = (event) => {
     const { value, name } = event.target;
     setValues({ ...values, [name]: value });
   };
 
-  return { values, setValues, handleChange };
+  const resetForm = () => {
+    setValues(initialValues);
+  }
+
+  return { values, resetForm, handleChange };
 };
 
 export default useInputsChange;

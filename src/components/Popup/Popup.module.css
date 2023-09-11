@@ -42,10 +42,6 @@
   cursor: pointer;
 }
 
-.close:hover {
-  opacity: 0.7;
-}
-
 .title {
   margin: 0;
   padding: 0;
@@ -100,27 +96,6 @@
   padding: 2px;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.submit {
-  border: none;
-  background: inherit;
-  display: block;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 8px;
-  padding: 10px 32px 12px;
-  background-color: var(--system-magenta-color);
-  color: var(--system-white-color);
-  text-align: center;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  cursor: pointer;
-}
-
-.submit:hover {
-  background-color: var(--system-pink-color);
 }
 
 @media screen and (max-width: 767.98px) {

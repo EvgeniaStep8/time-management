@@ -22,7 +22,6 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .title {
@@ -96,12 +95,15 @@
   border-radius: 5px;
 }
 
-.date {
-  margin-right: 10px;
+.footer {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.time {
-  margin-right: 180px;
+.date {
+  margin-right: 10px;
 }
 
 .icons {

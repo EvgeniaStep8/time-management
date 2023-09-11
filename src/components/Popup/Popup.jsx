@@ -1,5 +1,7 @@
 import useInputsChange from "../../hooks/useInputsChange";
 import styles from "./Popup.module.css";
+import SubmitButton from "../../UI/SubmitButton/SubmitButton";
+import CloseIcon from "../../UI/icons/CloseIcon";
 
 const Popup = ({ isOpen, onClose, onSubmit }) => {
   const className = isOpen
@@ -13,7 +15,7 @@ const Popup = ({ isOpen, onClose, onSubmit }) => {
     timeDeadline: "",
   };
 
-  const { values, setValues, handleChange } = useInputsChange(initialValues);
+  const { values, resetForm, handleChange } = useInputsChange(initialValues);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -23,13 +25,13 @@ const Popup = ({ isOpen, onClose, onSubmit }) => {
 
   const close = () => {
     onClose();
-    setValues(initialValues);
+    resetForm();
   };
 
   return (
     <div className={className}>
       <div className={styles.container}>
-        <button className={styles.close} type="button" onClick={close} />
+        <CloseIcon onClose={close} className={styles.close} />
         <h2 className={styles.title}>Задача</h2>
         <form className={styles.form} name="popupForm" onSubmit={handleSubmit}>
           <input
@@ -65,9 +67,7 @@ const Popup = ({ isOpen, onClose, onSubmit }) => {
             value={values.timeDeadline}
             onChange={handleChange}
           />
-          <button className={styles.submit} type="submit">
-            Сохранить
-          </button>
+          <SubmitButton text="Сохранить" />
         </form>
       </div>
     </div>
