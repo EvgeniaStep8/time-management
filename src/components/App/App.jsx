@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { addLocalStorageTask, getLocalStorageTasks, setLocalStorageTasks } from "../../utils/localStorage";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -8,9 +9,7 @@ import Popup from "../Popup/Popup";
 function App() {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [tasks, setTasks] = useState(
-    localStorage.getItem("tasks")
-      ? JSON.parse(localStorage.getItem("tasks"))
-      : []
+    getLocalStorageTasks()
   );
 
   const openPopup = () => {
@@ -37,22 +36,23 @@ function App() {
       done: false,
       id: tasks.length,
     };
-    setTasks([...tasks, task]);
-    localStorage.setItem("tasks", JSON.stringify([task, ...tasks]));
+
+    addLocalStorageTask(task);
+    setTasks(getLocalStorageTasks());
   };
 
   const handleCheckTask = (newTask) => {
     const newTasks = tasks.map((task) =>
       task.id === newTask.id ? newTask : task
     );
-    setTasks(newTasks);
-    localStorage.setItem("tasks", JSON.stringify(newTasks));
+    setLocalStorageTasks(newTasks);
+    setTasks(getLocalStorageTasks());
   };
 
   const handleDeliteTask = (id) => {
     const updatedTasks = tasks.filter((task) => task.id !== id);
-    setTasks(updatedTasks);
-    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    setLocalStorageTasks(updatedTasks);
+    setTasks(getLocalStorageTasks());
   };
 
   const handleTaskEdit = (
@@ -71,8 +71,8 @@ function App() {
           }
         : task
     );
-    setTasks(updatedTasks);
-    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    setLocalStorageTasks(updatedTasks);
+    setTasks(getLocalStorageTasks());
   };
 
   const handleSortClick = (field) => {
@@ -80,7 +80,6 @@ function App() {
       .slice()
       .sort((task1, task2) => +task1[field] - +task2[field]);
     setTasks(sortedTask);
-    localStorage.setItem("tasks", JSON.stringify(sortedTask));
   };
 
   return (

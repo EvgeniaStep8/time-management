@@ -60,3 +60,13 @@
 .add:hover {
   opacity: 0.7;
 }
+
+@media screen and (max-width: 767.98px) {
+  .display {
+    flex-direction: column;
+  }
+
+  .progress {
+    margin-bottom: 15px;
+  }
+}
