@@ -5,6 +5,7 @@ import Select from "../../UI/Select/Select";
 const TasksHeader = ({ count, countDone, openPopup, handleSortClick }) => {
   const [sortValue, setSortValue] = useState("date");
 
+  // обработчик изменения селекта
   const onSelectChange = (evt) => {
     setSortValue(evt.target.value);
     handleSortClick(evt.target.value);

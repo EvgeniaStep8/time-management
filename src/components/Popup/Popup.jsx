@@ -17,12 +17,14 @@ const Popup = ({ isOpen, onClose, onSubmit }) => {
 
   const { values, resetForm, handleChange } = useInputsChange(initialValues);
 
+  // при сабмите формы отменяем стандартное поведение и закрываем попап
   const handleSubmit = (evt) => {
     evt.preventDefault();
     onSubmit(values);
     close();
   };
 
+  // при закрытии попапа очищаем форму
   const close = () => {
     onClose();
     resetForm();

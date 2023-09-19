@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { addLocalStorageTask, getLocalStorageTasks, setLocalStorageTasks } from "../../utils/localStorage";
 import "./App.css";
 import Header from "../Header/Header";
@@ -9,17 +9,26 @@ import Popup from "../Popup/Popup";
 function App() {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [tasks, setTasks] = useState(
-    getLocalStorageTasks()
+    []
   );
 
+  // при загрузки странице получаем из localStorage задачи при наличии
+  useEffect(() => {
+    setTasks(getLocalStorageTasks());
+  }, []);
+
+
+  // функция для открытия попапа
   const openPopup = () => {
     setPopupOpen(true);
   };
 
+  // функция для закрытия попапа
   const closePopup = () => {
     setPopupOpen(false);
   };
 
+  // обработчик добавления новой задачи
   const handleAddTask = ({
     title,
     description,
@@ -41,6 +50,7 @@ function App() {
     setTasks(getLocalStorageTasks());
   };
 
+  // обработчик выполнения задачи
   const handleCheckTask = (newTask) => {
     const newTasks = tasks.map((task) =>
       task.id === newTask.id ? newTask : task
@@ -49,12 +59,14 @@ function App() {
     setTasks(getLocalStorageTasks());
   };
 
+  // обработчик удаления задачи
   const handleDeliteTask = (id) => {
     const updatedTasks = tasks.filter((task) => task.id !== id);
     setLocalStorageTasks(updatedTasks);
     setTasks(getLocalStorageTasks());
   };
 
+  // обработчик редактирования задачи
   const handleTaskEdit = (
     id,
     { title, description, dateDeadline, timeDeadline }
@@ -75,6 +87,7 @@ function App() {
     setTasks(getLocalStorageTasks());
   };
 
+  // обработчик сортировки задач
   const handleSortClick = (field) => {
     const sortedTask = tasks
       .slice()
