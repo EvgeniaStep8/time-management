@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/time-management/static/css/main.5e3964ef.css",
+    "main.css": "/time-management/static/css/main.e64ea9ee.css",
     "main.js": "/time-management/static/js/main.7c304589.js",
     "static/js/988.bb21df39.chunk.js": "/time-management/static/js/988.bb21df39.chunk.js",
     "static/media/SegoeUIRegular.ttf": "/time-management/static/media/SegoeUIRegular.1c5a6bfd4ec7a1bbe4ac.ttf",
@@ -8,15 +8,15 @@
     "static/media/SegoeUISemiBold.ttf": "/time-management/static/media/SegoeUISemiBold.a23f926d5b61c10b9cd6.ttf",
     "static/media/checkbox.svg": "/time-management/static/media/checkbox.9156168252552205d959.svg",
     "static/media/checkbox-checked.svg": "/time-management/static/media/checkbox-checked.e4cad68d766662514bcc.svg",
-    "static/media/bubble.svg": "/time-management/static/media/bubble.826a4b6645c56bbbf450.svg",
+    "static/media/bubble.svg": "/time-management/static/media/bubble.37c034fbc0b005aa3777.svg",
     "index.html": "/time-management/index.html",
     "static/media/done.svg": "/time-management/static/media/done.ac4377f828af8446da43.svg",
-    "main.5e3964ef.css.map": "/time-management/static/css/main.5e3964ef.css.map",
+    "main.e64ea9ee.css.map": "/time-management/static/css/main.e64ea9ee.css.map",
     "main.7c304589.js.map": "/time-management/static/js/main.7c304589.js.map",
     "988.bb21df39.chunk.js.map": "/time-management/static/js/988.bb21df39.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5e3964ef.css",
+    "static/css/main.e64ea9ee.css",
     "static/js/main.7c304589.js"
   ]
 }
